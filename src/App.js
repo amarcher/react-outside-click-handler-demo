@@ -3,7 +3,9 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import './App.css';
 
 class App extends Component {
-  constructor() {
+  constructor(props) {
+    super(props);
+
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
