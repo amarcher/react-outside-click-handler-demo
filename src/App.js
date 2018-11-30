@@ -3,13 +3,17 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+  }
+
+  handleOutsideClick() {
+    alert('You clicked outside of this component!!!');
+  }
+
   render() {
     return (
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          alert('You clicked outside of this component!!!');
-        }}
-      >
+      <OutsideClickHandler onOutsideClick={this.handleOutsideClick} useCapture>
         <div className="Element">
           Click Outside
         </div>
