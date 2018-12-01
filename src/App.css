@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  position: relative;
 }
 
 .Element {
@@ -14,4 +15,15 @@
 
 .Element_focussed {
   background-color: green;
+}
+
+.DatePicker {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  margin-top: 200px;
+  width: 200px;
+  height: 200px;
 }

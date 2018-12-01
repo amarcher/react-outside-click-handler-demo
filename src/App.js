@@ -36,6 +36,16 @@ class Content extends Component {
     }
   }
 
+  maybeRenderDatePicker() {
+    if (!this.isOpen()) return null;
+
+    return (
+      <OutsideClickHandler onOutsideClick={() => console.log('clicked outside datepicker')}>
+        <div className="DatePicker" />
+      </OutsideClickHandler>
+    )
+  }
+
   render() {
     const { isFocussed } = this.props;
 
@@ -45,6 +55,7 @@ class Content extends Component {
       <OutsideClickHandler onOutsideClick={this.handleOutsideClick} useCapture>
         <div className={className}>
           <input type="text" defaultValue="Click Outside" onFocus={this.handleInsideClick} />
+          {this.maybeRenderDatePicker()}
         </div>
       </OutsideClickHandler>
     );
