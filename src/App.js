@@ -53,7 +53,7 @@ class Content extends Component {
     const value = isFocussed ? 'Now Click Outside' : 'Focus To Open Picker';
 
     return (
-      <OutsideClickHandler onOutsideClick={this.handleOutsideClick} useCapture>
+      <OutsideClickHandler onOutsideClick={this.handleOutsideClick}>
         <div className={className}>
           <input type="text" value={value} onChange={() => {}} onFocus={this.handleInsideClick} />
           {this.maybeRenderDatePicker()}
