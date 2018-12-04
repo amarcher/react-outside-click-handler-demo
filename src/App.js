@@ -54,8 +54,13 @@ class Content extends Component {
 
     return (
       <OutsideClickHandler onOutsideClick={this.handleOutsideClick}>
-        <div className={className}>
-          <input type="text" value={value} onChange={() => {}} onFocus={this.handleInsideClick} />
+        <div
+          className={className}
+          onClick={(e) => { e.stopPropagation(); }}
+          role="region"
+          tabIndex={-1}
+        >
+          <input type="text" value={value} onChange={() => {}} onFocus={this.handleInsideClick} readOnly={true} />
           {this.maybeRenderDatePicker()}
         </div>
       </OutsideClickHandler>
